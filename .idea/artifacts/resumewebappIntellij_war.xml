@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="resumewebappIntellij:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="resumewebappIntellij.war">
+      <element id="artifact" artifact-name="resumewebappIntellij:war exploded" />
+    </root>
+  </artifact>
+</component>
