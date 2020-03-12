@@ -9,7 +9,7 @@
   <version>0.1</version>
   <packaging>war</packaging>
 
-  <name>resumedbapp3 Maven Webapp</name>
+  <name>resumewebappIntellij Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

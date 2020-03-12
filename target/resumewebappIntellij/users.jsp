@@ -16,25 +16,27 @@
 </head>
 <body>
 <%
-    UserDaoInter userDao = Context.instanceUserDao();
-
-    String name = request.getParameter("name");
-    String surname = request.getParameter("surname");
-
-    String nationalityIdStr = request.getParameter("nid");
-    Integer nationalityId = null;
-    if (nationalityIdStr != null && !nationalityIdStr.trim().isEmpty()) {
-        nationalityId = Integer.parseInt(nationalityIdStr);
-    }
-//    out.print("name " + name);
-//    out.print("surname " + surname);
-//    out.print("nation " + nationalityId);
-    List<User> lists = userDao.getAll(name, surname, nationalityId);
+//    UserDaoInter userDao = Context.instanceUserDao();
+//
+//    String name = request.getParameter("name");
+//    String surname = request.getParameter("surname");
+//
+//    String nationalityIdStr = request.getParameter("nid");
+//    Integer nationalityId = null;
+//    if (nationalityIdStr != null && !nationalityIdStr.trim().isEmpty()) {
+//        nationalityId = Integer.parseInt(nationalityIdStr);
+//    }
+////    out.print("name " + name);
+////    out.print("surname " + surname);
+////    out.print("nation " + nationalityId);
+//    List<User> lists = userDao.getAll(name, surname, nationalityId);
+    List<User> lists=(List<User>)request.getAttribute("userList");
 
 
 %>
 <div class="container">
     <div>
+        <!--Form here -->
         <form action="users" method="get" class="form-inline">
             <div class="form-group mb-2">
                 <label for="name" class="sr-only">name </label>
@@ -51,6 +53,7 @@
         </form>
 
         <div>
+            <!--Table here -->
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -79,11 +82,12 @@
                         </form>
                     </td>
                     <td style="width:5px;">
-                        <form action="userdetail" method="post">
-                            <input type="hidden" name="id" value="<%=list.getId()%>"/>
-                            <input type="hidden" name="action" value="delete"/>
-                            <button class="btn btn-danger" type="submit" value="delete">Delete</button>
-                        </form>
+
+
+                        <button onclick="idForDeleteModal('<%=list.getId()%>')" class="btn btn-danger" type="button" value="delete" data-toggle="modal"
+                                data-target="#deleteModal">Delete
+                        </button>
+
                     </td>
                     <td style="width:5px;">
                         <button class="btn btn-secondary" type="submit" name="action" value="info">Info</button>
@@ -95,6 +99,33 @@
         </div>
     </div>
 </div>
+<!--Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete user</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <form action="userdetail" method="post">
+                    <input type="hidden" name="id" id="idForDeleteModal" value=""/>
+                    <input type="hidden" name="action" value="delete"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="assets/js/users.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
