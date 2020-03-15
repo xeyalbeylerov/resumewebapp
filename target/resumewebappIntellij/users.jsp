@@ -83,14 +83,16 @@
                     </td>
                     <td style="width:5px;">
 
-
                         <button onclick="idForDeleteModal('<%=list.getId()%>')" class="btn btn-danger" type="button" value="delete" data-toggle="modal"
                                 data-target="#deleteModal">Delete
                         </button>
 
                     </td>
                     <td style="width:5px;">
+                        <form action="userdetail" method="get">
+                            <input type="hidden" name="id" value="<%=list.getId()%>"/>
                         <button class="btn btn-secondary" type="submit" name="action" value="info">Info</button>
+                        </form>
                     </td>
                 </tr>
                 <%}%>

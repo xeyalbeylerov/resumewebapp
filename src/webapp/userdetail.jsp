@@ -25,12 +25,19 @@
 //    }
 
 %>
-
-<table class="table table-striped container">
+<div class="position-fixed">
+    <%--<div class="p-2 my-flex-item text-right">1dwdwd</div>--%>
+    <form action="users" method="get">
+        <input type="hidden" name="id" id="idForDeleteModal" value=""/>
+        <input type="hidden" name="action" value="update"/>
+               <button type="submit" class="btn btn-warning text-right">Update</button>
+    </form>
+</div>
+<table class="table table-striped container" >
     <thead>
     <tr>
-        <th scope="col" class="text-center">#</th>
-        <th scope="col" class="text-center">Details</th>
+        <th scope="col" class="text-center" width="30%">#</th>
+        <th scope="col" class="text-center" width="70%" >Details</th>
 
     </tr>
     </thead>
@@ -42,49 +49,58 @@
     </tr>
     <tr scope="row">
         <td>Name</td>
-        <td><%=u.getName() == null ? "N/A" : u.getName()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getName() == null ? "" : u.getName()%>"/></td>
+        <%--<td><%=u.getName() == null ? "N/A" : u.getName()%>--%>
+        <%--</td>--%>
     </tr>
 
     <tr scope="row">
         <td>Surname</td>
-        <td><%=u.getSurname() == null ? "N/A" : u.getSurname()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getSurname() == null ? "" : u.getSurname()%>"/></td>
+        <%--<td><%=u.getSurname() == null ? "N/A" : u.getSurname()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Address</td>
-        <td><%=u.getAddress() == null ? "N/A" : u.getAddress()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getAddress() == null ? "" : u.getAddress()%>"/></td>
+        <%--<td><%=u.getAddress() == null ? "N/A" : u.getAddress()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Email</td>
-        <td><%=u.getEmail() == null ? "N/A" : u.getEmail()%>
-        </td>
+        <td><input class="form-control" type="email" name="name" value="<%=u.getEmail() == null ? "" : u.getEmail()%>"/></td>
+        <%--<td><%=u.getEmail() == null ? "N/A" : u.getEmail()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Skills</td>
-        <td><%=u.getSkills() == null ? "N/A" : u.getSkills()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getSkills() == null ? "" : u.getSkills()%>"/></td>
+        <%--<td><%=u.getSkills() == null ? "N/A" : u.getSkills()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Profile Description</td>
-        <td><%=u.getProfileDesc() == null ? "N/A" : u.getProfileDesc()%>
-        </td>
+        <td><textarea id="w3mission" rows="3" cols="90" class="form-control" type="text" name="name" value="<%=u.getProfileDesc() == null ? "" : u.getProfileDesc()%>"> </textarea></td>
+        <%--<td><%=u.getProfileDesc() == null ? "N/A" : u.getProfileDesc()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Birthdate</td>
-        <td><%=u.getBirthDate() == null ? "N/A" : u.getBirthDate()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getBirthDate() == null ? "" : u.getBirthDate()%>"/></td>
+        <%--<td><%=u.getBirthDate() == null ? "N/A" : u.getBirthDate()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Birthplace</td>
-        <td><%=u.getBirthPlace() == null ? "N/A" : u.getBirthPlace()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getBirthPlace() == null ? "" : u.getBirthPlace()%>"/></td>
+        <%--<td><%=u.getBirthPlace() == null ? "N/A" : u.getBirthPlace()%>--%>
+        <%--</td>--%>
     </tr>
     <tr scope="row">
         <td>Phone</td>
-        <td><%=u.getPhone() == null ? "N/A" : u.getPhone()%>
-        </td>
+        <td><input class="form-control" type="text" name="name" value="<%=u.getPhone() == null ? "" : u.getPhone()%>"/></td>
+        <%--<td><%=u.getPhone() == null ? "N/A" : u.getPhone()%>--%>
+        <%--</td>--%>
     </tr>
     <%
 

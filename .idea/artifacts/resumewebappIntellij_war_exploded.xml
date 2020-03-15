@@ -42,6 +42,8 @@
           <element id="file-copy" path="C:/Program Files/apache-tomcat-9.0.31/lib/tomcat-i18n-pt-BR.jar" />
           <element id="file-copy" path="C:/Program Files/apache-tomcat-9.0.31/lib/tomcat-i18n-zh-CN.jar" />
           <element id="file-copy" path="C:/Program Files/apache-tomcat-9.0.31/lib/catalina-storeconfig.jar" />
+          <element id="library" level="project" name="Maven: at.favre.lib:bytes:0.8.0" />
+          <element id="library" level="project" name="Maven: at.favre.lib:bcrypt:0.7.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

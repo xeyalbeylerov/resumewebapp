@@ -16,8 +16,6 @@ public class UserRequestUtil {
         }
     }
     public static User processRequest(HttpServletRequest request, HttpServletResponse response) throws IllegalArgumentException {
-
-
             UserRequestUtil.checkRequest(request, response);
             Integer userId = Integer.parseInt(request.getParameter("id"));
             UserDaoInter userDao = Context.instanceUserDao();

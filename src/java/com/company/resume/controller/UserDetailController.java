@@ -21,8 +21,6 @@ public class UserDetailController extends HttpServlet {
         int id = Integer.valueOf(request.getParameter("id"));
         String action = request.getParameter("action");
         if (action.equals("update")) {
-
-
             String name = request.getParameter("name");
             String surname = request.getParameter("surname");
             User user = userDao.getById(id);
@@ -40,7 +38,6 @@ public class UserDetailController extends HttpServlet {
         try {
             String userIdStr = request.getParameter("id");
             if (userIdStr == null || userIdStr.trim().isEmpty()) {
-
                 throw new IllegalArgumentException("Specify id");
             }
             Integer userId = Integer.parseInt(userIdStr);
